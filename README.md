@@ -36,7 +36,7 @@ Live site: https://rafikiscyent888.github.io/Cyber-Warrior-Command-Center/
 - [CySA Quizzes](https://rafikiscyent888.github.io/CySA-questions/) · [CySA Acronyms](https://rafikiscyent888.github.io/CySA-Acronyms/) · [CySA Sims](https://rafikiscyent888.github.io/CySA-Sims/)
 
 **Universal**
-- [Port Quiz](https://rafikiscyent888.github.io/Port-Quiz/) · [Windows & Linux Commands](https://rafikiscyent888.github.io/Windows-Linux-Commands/)
+- [Port Quiz](https://rafikiscyent888.github.io/Port-Quiz/) · [Windows & Linux Commands](https://rafikiscyent888.github.io/Windows-Linux-Commands/) · [Cloud Ops: Basic Training](https://rafikiscyent888.github.io/Cloud-aaS-Learning-Hub/)
 
 ## Hosting
 
