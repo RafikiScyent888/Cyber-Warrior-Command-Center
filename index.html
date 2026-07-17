@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Warrior Command Center</title>
+<meta name="description" content="Central hub for CompTIA A+, Network+, Security+, and CySA+ study resources — sims, acronym games, quizzes, and command references.">
+<style>
+  :root {
+    --royal-blue-deep: #0f1f4d;
+    --royal-blue: #1e3a8a;
+    --royal-blue-light: #2f4fb0;
+    --royal-red: #b91c1c;
+    --royal-green: #15803d;
+    --royal-purple: #6d28d9;
+    --royal-yellow: #eab308;
+    --royal-orange: #c2410c;
+    --text-light: #f5f7ff;
+    --text-dark: #16192e;
+    --card-bg-alpha: rgba(255,255,255,0.06);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(160deg, var(--royal-blue-deep) 0%, var(--royal-blue) 55%, var(--royal-blue-light) 100%);
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  header {
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: clamp(1.6rem, 5vw, 2.6rem);
+    letter-spacing: 0.02em;
+  }
+
+  header p.tagline {
+    margin: 0.5rem auto 0;
+    max-width: 40rem;
+    opacity: 0.85;
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  }
+
+  .search-wrap {
+    max-width: 32rem;
+    margin: 1.5rem auto 0;
+    padding: 0 1rem;
+  }
+
+  #search {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.1);
+    color: var(--text-light);
+    font-size: 1rem;
+  }
+
+  #search::placeholder { color: rgba(245,247,255,0.6); }
+  #search:focus { outline: 2px solid #fff; outline-offset: 2px; }
+
+  main {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .tile {
+    grid-column: span 1;
+    border-radius: 1rem;
+    background: var(--card-bg-alpha);
+    border: 1px solid rgba(255,255,255,0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tile.wide { grid-column: 1 / -1; }
+
+  .tile-header {
+    padding: 1rem 1.25rem;
+    background: var(--tile-color);
+    color: var(--tile-text, var(--text-light));
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .tile-body { padding: 1rem 1.25rem 1.25rem; }
+
+  .subtile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .subtile {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .subtile-header {
+    padding: 0.65rem 1rem;
+    background: var(--tile-color);
+    color: var(--tile-text, var(--text-light));
+    font-weight: 600;
+  }
+
+  .subtile-body { padding: 0.75rem 1rem 1rem; background: rgba(255,255,255,0.04); }
+
+  ul.links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  ul.links a {
+    display: block;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.55rem;
+    background: rgba(255,255,255,0.08);
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.98rem;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+
+  ul.links a:hover, ul.links a:focus-visible {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(2px);
+  }
+
+  ul.links li.hidden { display: none; }
+
+  .empty-msg {
+    text-align: center;
+    opacity: 0.7;
+    padding: 2rem 1rem;
+    display: none;
+  }
+
+  .empty-msg.show { display: block; }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    max-width: 46rem;
+    margin: 0 auto;
+  }
+
+  footer .disclaimer {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    header { padding: 1.75rem 1rem 1rem; }
+    main { gap: 1rem; padding: 1rem 0.75rem 2rem; }
+    .tile-body { padding: 0.85rem 1rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🛡️ Cyber Warrior Command Center</h1>
+  <p class="tagline">One place for every sim, acronym game, quiz bank, and command reference built for CompTIA A+, Network+, Security+, and CySA+ study.</p>
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Search resources… (e.g. subnetting, RAID, phishing)" aria-label="Search resources">
+  </div>
+</header>
+
+<main id="tile-grid">
+
+  <section class="tile wide" style="--tile-color: var(--royal-red);">
+    <div class="tile-header">A+ (Core 1 &amp; Core 2)</div>
+    <div class="tile-body">
+      <div class="subtile-grid">
+
+        <div class="subtile" style="--tile-color: var(--royal-green);">
+          <div class="subtile-header">Core 1</div>
+          <div class="subtile-body">
+            <ul class="links">
+              <li data-search="core 1 quizzes a+ 220-1201"><a href="https://rafikiscyent888.github.io/Core-1-quizzes/" target="_blank" rel="noopener">Core 1 Quizzes</a></li>
+              <li data-search="core 1 sims simulations pbq raid printers wap a+ 220-1201"><a href="https://rafikiscyent888.github.io/Core-1-Sims/" target="_blank" rel="noopener">Core 1 Sims</a></li>
+              <li data-search="a+ acronyms core 1 core 2 acronym games"><a href="https://rafikiscyent888.github.io/A-acronym-games./" target="_blank" rel="noopener">A+ Acronyms</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="subtile" style="--tile-color: var(--royal-purple);">
+          <div class="subtile-header">Core 2</div>
+          <div class="subtile-body">
+            <ul class="links">
+              <li data-search="core 2 quizzes a+ 220-1202 windows os security"><a href="https://rafikiscyent888.github.io/Core-2-quizzes/" target="_blank" rel="noopener">Core 2 Quizzes</a></li>
+              <li data-search="core 2 sims simulations phishing malware incident response wifi router a+ 220-1202"><a href="https://rafikiscyent888.github.io/Core-2-Sims/" target="_blank" rel="noopener">Core 2 Sims</a></li>
+              <li data-search="a+ acronyms core 1 core 2 acronym games"><a href="https://rafikiscyent888.github.io/A-acronym-games./" target="_blank" rel="noopener">A+ Acronyms</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="tile" style="--tile-color: var(--royal-green);">
+    <div class="tile-header">Network+</div>
+    <div class="tile-body">
+      <ul class="links">
+        <li data-search="network quizzes n10-009 subnetting osi routing switching"><a href="https://rafikiscyent888.github.io/Network-quizzes/" target="_blank" rel="noopener">Network Quizzes</a></li>
+        <li data-search="network acronyms n10-009 stp cidr flashcards"><a href="https://rafikiscyent888.github.io/Network-Acronyms/" target="_blank" rel="noopener">Network Acronyms</a></li>
+        <li data-search="network sims simulations stp vlan raid acl troubleshooting n10-009"><a href="https://rafikiscyent888.github.io/Network-Sims/" target="_blank" rel="noopener">Network Sims</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tile" style="--tile-color: var(--royal-yellow); --tile-text: var(--text-dark);">
+    <div class="tile-header">Security+</div>
+    <div class="tile-body">
+      <ul class="links">
+        <li data-search="security quizzes questions sy0-701 cia triad"><a href="https://rafikiscyent888.github.io/Security-Questions/" target="_blank" rel="noopener">Security Quizzes</a></li>
+        <li data-search="security acronyms sy0-701 glossary flashcards"><a href="https://rafikiscyent888.github.io/Security-Acronyms/" target="_blank" rel="noopener">Security Acronyms</a></li>
+        <li data-search="security sims simulations vpn firewall ssh malware phishing pbq sy0-701"><a href="https://rafikiscyent888.github.io/Security-Sims/" target="_blank" rel="noopener">Security Sims</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tile" style="--tile-color: var(--royal-orange);">
+    <div class="tile-header">CySA+</div>
+    <div class="tile-body">
+      <ul class="links">
+        <li data-search="cysa quizzes questions cs0-003 soc analyst"><a href="https://rafikiscyent888.github.io/CySA-questions/" target="_blank" rel="noopener">CySA Quizzes</a></li>
+        <li data-search="cysa acronyms cs0-003 glossary flashcards siem soar"><a href="https://rafikiscyent888.github.io/CySA-Acronyms/" target="_blank" rel="noopener">CySA Acronyms</a></li>
+        <li data-search="cysa sims simulations kill chain ioc soc analyst incident response cs0-003"><a href="https://rafikiscyent888.github.io/CySA-Sims/" target="_blank" rel="noopener">CySA Sims</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tile" style="--tile-color: var(--royal-purple);">
+    <div class="tile-header">Universal</div>
+    <div class="tile-body">
+      <ul class="links">
+        <li data-search="port quiz ports protocols tcp udp secure swap"><a href="https://rafikiscyent888.github.io/Port-Quiz/" target="_blank" rel="noopener">Port Quiz</a></li>
+        <li data-search="windows linux commands powershell cli cheatsheet"><a href="https://rafikiscyent888.github.io/Windows-Linux-Commands/" target="_blank" rel="noopener">Windows &amp; Linux Commands</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="empty-msg" id="empty-msg">No resources match that search.</p>
+
+</main>
+
+<footer>
+  <p><strong>Cyber Warrior Program</strong> — built by an instructor, for students, to make certification study more interactive.</p>
+  <div class="disclaimer">
+    For educational purposes only. Not affiliated with, endorsed by, or sponsored by CompTIA®. All trademarks belong to their respective owners.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var input = document.getElementById('search');
+  var items = Array.prototype.slice.call(document.querySelectorAll('#tile-grid li[data-search]'));
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('#tile-grid > .tile'));
+  var subtiles = Array.prototype.slice.call(document.querySelectorAll('.subtile'));
+  var emptyMsg = document.getElementById('empty-msg');
+
+  function applyFilter() {
+    var q = input.value.trim().toLowerCase();
+    var anyVisible = false;
+
+    items.forEach(function (li) {
+      var match = q === '' || li.getAttribute('data-search').indexOf(q) !== -1 ||
+        li.textContent.toLowerCase().indexOf(q) !== -1;
+      li.classList.toggle('hidden', !match);
+      if (match) anyVisible = true;
+    });
+
+    subtiles.forEach(function (sub) {
+      var visibleLinks = sub.querySelectorAll('li[data-search]:not(.hidden)').length;
+      sub.style.display = visibleLinks === 0 ? 'none' : '';
+    });
+
+    tiles.forEach(function (tile) {
+      var visibleLinks = tile.querySelectorAll('li[data-search]:not(.hidden)').length;
+      tile.style.display = visibleLinks === 0 ? 'none' : '';
+    });
+
+    emptyMsg.classList.toggle('show', !anyVisible);
+  }
+
+  input.addEventListener('input', applyFilter);
+})();
+</script>
+
+</body>
+</html>
