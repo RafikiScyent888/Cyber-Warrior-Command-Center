@@ -54,6 +54,16 @@ data file offline — never required for the site to run). GitHub Pages is
 served from repo root on `main` in every case — no `/docs`, no `gh-pages`
 branch, no GitHub Actions.
 
+## Repos added after the initial survey
+
+| Repo | Covers | Format | Item count |
+|---|---|---|---|
+| Cloud-aaS-Learning-Hub | Cloud service/deployment models (IaaS/PaaS/SaaS/On-Prem, Public/Private/Hybrid/Community, CASB/SASE/FaaS/DaaS/XaaS) — all certs | Hub + 7 standalone game pages, shared `js/data.js` + `js/common.js`, military "mission/drill" framing, elemental tile badge colors (Sun/Blue/Green/Lightning/Earth/Purple/Fire) | 13 glossary terms, 20 quiz questions, 24 blitz T/F items, 8 scenarios |
+
+Linked from the Universal tile. Repo name on GitHub is `Cloud-aaS-Learning-Hub`
+(the working name during development was "Cloud-Ops-Basic-Training" — the
+owner renamed it at creation time; use the GitHub name in links).
+
 ## Known content issues (found during the 2026-07 survey, not yet fixed)
 
 - **Security-Questions**: README claims 514 questions, actual bank has 773.
